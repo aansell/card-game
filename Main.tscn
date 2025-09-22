@@ -1,0 +1,142 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq4pf5vqxf8bp"]
+
+[ext_resource type="Script" path="res://GameManager.gd" id="1_2m8ka"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_2m8ka")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.2, 0.4, 0.2, 1)
+
+[node name="GameTitle" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = -174.0
+text = "Card Game Starter"
+horizontal_alignment = 1
+
+[node name="PlayArea" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="PlayAreaBG" type="ColorRect" parent="UI/PlayArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.3, 0.3, 0.3, 0.5)
+
+[node name="PlayAreaLabel" type="Label" parent="UI/PlayArea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 13.0
+text = "Play Area"
+horizontal_alignment = 1
+
+[node name="PlayerHand" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -20.0
+alignment = 1
+
+[node name="AIHand" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 150.0
+alignment = 1
+
+[node name="GameControls" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -50.0
+offset_bottom = 50.0
+
+[node name="StartGameButton" type="Button" parent="UI/GameControls"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="DrawCardButton" type="Button" parent="UI/GameControls"]
+layout_mode = 2
+text = "Draw Card"
+
+[node name="EndTurnButton" type="Button" parent="UI/GameControls"]
+layout_mode = 2
+text = "End Turn"
+
+[node name="GameInfo" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 50.0
+
+[node name="DeckSizeLabel" type="Label" parent="UI/GameInfo"]
+layout_mode = 2
+text = "Deck: 0 cards"
+
+[node name="PlayerHandLabel" type="Label" parent="UI/GameInfo"]
+layout_mode = 2
+text = "Player Hand: 0 cards"
+
+[node name="AIHandLabel" type="Label" parent="UI/GameInfo"]
+layout_mode = 2
+text = "AI Hand: 0 cards"
+
+[connection signal="pressed" from="UI/GameControls/StartGameButton" to="GameManager" method="start_game"]

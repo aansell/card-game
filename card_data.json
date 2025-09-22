@@ -1,0 +1,40 @@
+{
+  "cards": {
+    "blank": {
+      "name": "Blank Card",
+      "type": "blank",
+      "rank": 0,
+      "value": 0,
+      "suit": "none",
+      "cost": 0,
+      "attack": 0,
+      "health": 0,
+      "description": "A blank card that can be customized",
+      "image_path": "res://assets/cards/blank.png"
+    },
+    "goblin": {
+      "name": "Goblin Warrior",
+      "type": "creature",
+      "rank": 1,
+      "value": 2,
+      "suit": "none",
+      "cost": 2,
+      "attack": 2,
+      "health": 1,
+      "description": "A small but fierce goblin warrior",
+      "image_path": "res://assets/cards/goblin.png"
+    },
+    "ace_hearts": {
+      "name": "Ace of Hearts",
+      "type": "traditional",
+      "rank": 14,
+      "value": 1,
+      "suit": "hearts",
+      "cost": 0,
+      "attack": 0,
+      "health": 0,
+      "description": "The ace of hearts from a traditional deck",
+      "image_path": "res://assets/cards/ace_hearts.png"
+    }
+  }
+}

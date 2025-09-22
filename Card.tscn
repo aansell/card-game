@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvx7q5qjrq5wk"]
+
+[ext_resource type="Script" path="res://Card.gd" id="1_5m8ka"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_5m8ka")
+
+[node name="CardFrame" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="VBox" type="VBoxContainer" parent="CardFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+
+[node name="NameLabel" type="Label" parent="CardFrame/VBox"]
+layout_mode = 2
+text = "Card Name"
+horizontal_alignment = 1
+
+[node name="CardImage" type="TextureRect" parent="CardFrame/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBox" type="HBoxContainer" parent="CardFrame/VBox"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="CardFrame/VBox/HBox"]
+layout_mode = 2
+text = "Cost: 0"
+
+[node name="AttackLabel" type="Label" parent="CardFrame/VBox/HBox"]
+layout_mode = 2
+text = "ATK: 0"
+
+[node name="HealthLabel" type="Label" parent="CardFrame/VBox/HBox"]
+layout_mode = 2
+text = "HP: 0"
+
+[node name="DescriptionLabel" type="Label" parent="CardFrame/VBox"]
+layout_mode = 2
+text = "Card description goes here"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_card_clicked"]
